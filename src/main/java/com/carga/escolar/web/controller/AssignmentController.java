@@ -34,7 +34,7 @@ public class AssignmentController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("/save")
+    @PostMapping("/create")
     public ResponseEntity<Assignment> save(@RequestBody Assignment assignment) {
         return new ResponseEntity<>(assignmentService.save(assignment), HttpStatus.CREATED);
     }

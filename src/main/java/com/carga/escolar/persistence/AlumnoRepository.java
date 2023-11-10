@@ -40,18 +40,26 @@ public class AlumnoRepository implements StudentRepository {
     public Student update(Student newStudent, int studentId) {
         Optional<Alumno> existingStudent = alumnoCrudRepository.findById(studentId);
 
-        /*Si existe un Assignment, pasa todos los valores del existente a uno nuevo,
-        este nuevo (assignmentToUpdate) sólo modifica los valores que se pasaron */
+        /*Si existe un Student con el ID buscado, pasa todos los valores del existente a uno nuevo,
+        este nuevo (studentToUpdate) sólo modifica los valores que se pasaron */
         if (existingStudent.isPresent()) {
             Alumno studentToUpdate = existingStudent.get();
 
-            //Update properties, only if are given
+            //Update propiedades, solo si son pasadas
+            //*** Actualización, esta comprobación se hace desde el frontend
+            //Desde el frontend debe asegurarse que los campos que no se modifican, no se envíen vacíos
+            /*
             if (newStudent.getEmail() != null) {
                 studentToUpdate.setEmail(newStudent.getEmail());
             }
             if (newStudent.getPhone() != null) {
                 studentToUpdate.setCelular(newStudent.getPhone());
             }
+            */
+
+            //Propiedades modificables
+            studentToUpdate.setEmail(newStudent.getEmail());
+            studentToUpdate.setCelular(newStudent.getPhone());
 
             //Save
             Alumno updatedAlumno = alumnoCrudRepository.save(studentToUpdate);

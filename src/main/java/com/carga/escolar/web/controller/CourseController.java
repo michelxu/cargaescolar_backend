@@ -27,7 +27,7 @@ public class CourseController {
         return courseService.getCourse(courseId);
     }
 
-    @PostMapping("/save")
+    @PostMapping("/create")
     public Course save(@RequestBody Course course) {
         return courseService.save(course);
     }

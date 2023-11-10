@@ -32,7 +32,7 @@ public class StudentController {
                 .orElse(new ResponseEntity<>(HTTP_NOT_FOUND));
     }
 
-    @PostMapping("/save")
+    @PostMapping("/create")
     public Student save(@RequestBody Student student) {
         return studentService.save(student);
     }

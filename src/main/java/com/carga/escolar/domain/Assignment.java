@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 
 public class Assignment {
     private int assignmentId;
-    private int studentId;
-    private int courseId;
+    private Integer studentId;
+    private Integer courseId;
     private LocalDateTime createdAt;
     private Student student;
     private Course course;
@@ -22,19 +22,19 @@ public class Assignment {
         this.assignmentId = assignmentId;
     }
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Integer studentId) {
         this.studentId = studentId;
     }
 
-    public int getCourseId() {
+    public Integer getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(Integer courseId) {
         this.courseId = courseId;
     }
 

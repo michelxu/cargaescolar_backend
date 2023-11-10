@@ -55,11 +55,14 @@ public class AsignacionRepository implements AssignmentRepository {
             Asignacion assignmentToUpdate = existingAssignment.get();
 
             //Update properties, only if are given
-            if (newAssignment.getStudentId() != -1) {
+            if (newAssignment.getStudentId() != null) {
                 assignmentToUpdate.setIdAlumno(newAssignment.getStudentId());
             }
-            if (newAssignment.getCourseId() != -1) {
+            if (newAssignment.getCourseId() != null) {
                 assignmentToUpdate.setIdClase(newAssignment.getCourseId());
+            }
+            if (newAssignment.getCreatedAt() != null) {
+                assignmentToUpdate.setFechaCreacion(newAssignment.getCreatedAt());
             }
 
             //Save
